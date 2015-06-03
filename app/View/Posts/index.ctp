@@ -12,10 +12,10 @@
     <table class='info table table-bordered table-hover text-center'>
             <tr class='info'>
                 <th class='text-center'>ID</th>
-                <th class='text-center'>TITLE</th>
-                <th class='text-center'>BODY</th>
-                <th class='text-center'>CREATED_AT</th>
-                <th class='text-center'>Action</th>
+                <th class='text-center'><?php echo __('title') ?></th>
+                <th class='text-center'><?php echo __('body') ?></th>
+                <th class='text-center'><?php echo __('created_at') ?></th>
+                <th class='text-center'><?php echo __('action') ?></th>
             </tr>
             <?php
                 foreach ($posts as $post){
@@ -28,21 +28,21 @@
                 <td class='text-center'><?php echo $post['Post']['created']; ?></td>
                 <td class='text-center'>
                  <?php
-                                    echo $this->Html->link('Xem',
+                                    echo $this->Html->link(__('view'),
                                     array('controller'=>'posts','action'=>'view',$post['Post']['id']),
                                     array('class'=>'btn btn-info')
                                     );
                                 ?>
                     <?php
                         echo $this->Html->link(
-                            'Edit',
+                            __('edit'),
                             array('action' => 'edit', $post['Post']['id']),
                             array('class'=>'btn btn-warning')
                         );
                     ?>
                     <?php
                         echo $this->Form->postLink(
-                            'Delete',
+                            __('delete'),
                             array('action' => 'delete', $post['Post']['id']),
                             array('confirm' => 'Are you sure?','class'=>'btn btn-danger')
                         );

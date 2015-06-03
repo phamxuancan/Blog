@@ -3,11 +3,11 @@
 <?php echo $this->Form->create('Users'); ?>
     <fieldset>
         <legend>
-            <?php echo __('Please enter your username and password'); ?>
+            <?php echo __('enter_login'); ?>
         </legend>
         <?php echo $this->Form->input('username');
         echo $this->Form->input('password');
     ?>
     </fieldset>
-<?php echo $this->Form->end(('Login')); ?>
+<?php echo $this->Form->end(__('login')); ?>
 </div>

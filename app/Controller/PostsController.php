@@ -39,7 +39,7 @@ class PostsController extends AppController{
                 $this->Post->create();
                 $this->request->data['Post']['user_id'] = $this->Auth->user('id');
                 if ($this->Post->save($this->request->data)) {
-                    $this->Session->setFlash('Your post has been saved.');
+                    $this->Session->setFlash(__('post_success'));
                     return $this->redirect(array('action' => 'index'));
                 }
                 $this->Session->setFlash(__('Unable to add your post.'));
@@ -59,7 +59,7 @@ class PostsController extends AppController{
                 $this->Post->id = $id;
                 $data = $this->request->data;
                 if ($this->Post->save($this->request->data)) {
-                    $this->Session->setFlash(__('Your post has been updated.'));
+                    $this->Session->setFlash(__('edit_success'));
                     return $this->redirect(array('action' => 'index'));
                 }
                 $this->Session->setFlash(__('Unable to update your post.'));

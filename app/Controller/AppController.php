@@ -48,17 +48,27 @@ class AppController extends Controller {
         )
     );
     public function isAuthorized($user) {
-        return true;
-//        // Admin can access every action
-//        var_dump('fsdf');exit;
-//        if (isset($user['role']) && $user['role'] === 'admin') {
-//            return true;
-//        }
-//
-//        // Default deny
-//        return false;
+       // return true;
+       // Admin can access every action
+
+        if (isset($user['role']) && $user['role'] === 'admin') {
+            return true;
+        }
+        // Default deny
+       return false;
     }
     public function beforeFilter() {
+        //$locale = 'en';
+        if(isset($this->request->query['lang'])){
+            $locale = $this->request->query['lang'];
+            $this->Session->write('lang', $locale);
+        }
+        Configure::write('Config.language',$this->Session->read('lang'));
+        $locale = $this->Session->read('lang');
+        if ($locale && file_exists(APP . 'View' . DS . $locale . DS . $this->viewPath)) {
+            // e.g. use /app/View/fra/Pages/tos.ctp instead of /app/View/Pages/tos.ctp
+            $this->viewPath = $locale . DS . $this->viewPath;
+        }
         $this->Auth->allow('index', 'view');
     }
 }

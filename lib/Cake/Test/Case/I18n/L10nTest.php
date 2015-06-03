@@ -427,8 +427,8 @@ class L10nTest extends CakeTestCase {
 		$expected = array('ven' => 've', 've' => 'ven');
 		$this->assertEquals($expected, $result);
 
-		$result = $localize->map(array('vie', 'vi'));
-		$expected = array('vie' => 'vi', 'vi' => 'vie');
+		$result = $localize->map(array('vie', 'vie'));
+		$expected = array('vie' => 'vie', 'vie' => 'vie');
 		$this->assertEquals($expected, $result);
 
 		$result = $localize->map(array('xho', 'xh'));
@@ -895,9 +895,9 @@ class L10nTest extends CakeTestCase {
 		);
 		$this->assertEquals($expected, $result);
 
-		$result = $localize->catalog(array('vi'));
+		$result = $localize->catalog(array('vie'));
 		$expected = array(
-			'vi' => array('language' => 'Vietnamese', 'locale' => 'vie', 'localeFallback' => 'vie', 'charset' => 'utf-8', 'direction' => 'ltr')
+			'vie' => array('language' => 'Vietnamese', 'locale' => 'vie', 'localeFallback' => 'vie', 'charset' => 'utf-8', 'direction' => 'ltr')
 		);
 		$this->assertEquals($expected, $result);
 

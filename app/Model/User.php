@@ -6,7 +6,6 @@
  * Time: 5:21 PM
  */
 App::uses('AppModel', 'Model');
-App::uses('Security', 'Utility');
 class User extends AppModel{
     public $validate = array(
         'username' => array(
