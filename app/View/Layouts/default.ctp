@@ -24,6 +24,17 @@
 	<div id="container">
 		<div id="header">
            <span class="fa-5x">MOB</span>
+            <?php
+                if($this->Session->read('is_login')){
+                    echo $this->Html->link(
+                        __('logout'),
+                        array('controller'=>'users','action' => 'logout',),
+                        array('class'=>'btn btn-warning pull-right')
+                    );
+                }
+            ?>
+
+
 		</div>
 		<div id="content">
 

@@ -11,7 +11,7 @@ class PostsController extends AppController{
         public $helpers = array('Html','From');
         public function index(){
             $this->loadModel('Post');
-           $data =  $this->set('posts',$this->Post->find('all'));
+            $this->set('posts',$this->Post->find('all'));
             $this->render('/Posts/index');
         }
         public function view($id = null)

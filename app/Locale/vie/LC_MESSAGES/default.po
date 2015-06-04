@@ -42,6 +42,8 @@ msgid "save_edit"
 msgstr "Đồng ý"
 msgid "edit_success"
 msgstr "Sửa thành công!"
+msgid "logout"
+msgstr "Đăng xuất"
 
 
 

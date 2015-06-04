@@ -38,6 +38,10 @@ msgid "save_edit"
 msgstr "Save"
 msgid "edit_success"
 msgstr "Edit success!"
+msgid "logout"
+msgstr "logout"
+msgid "alert_del_1"
+msgstr "The post with id"
 
 
 
